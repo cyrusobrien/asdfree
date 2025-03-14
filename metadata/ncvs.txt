@@ -22,11 +22,13 @@ Four Example Strengths & Limitations:
 
 ✔️ [Detailed taxonomy of crime incidents](https://bjs.ojp.gov/document/ncvs23_cir.pdf)
 
-✔️ [Estimates available for 22 largest states starting in 2017](https://www.ojp.gov/library/publications/national-crime-victimization-survey-state-level-analysis-users-guide)
+✔️ [Estimates available for 22 largest states starting in 2017](https://www.ojp.gov/library/publications/national-crime-victimization-survey-state-level-analysis-users-guide).
 
 ❌ [May undercount rape and sexual assault](https://nap.nationalacademies.org/catalog/18605/estimating-the-incidence-of-rape-and-sexual-assault)
 
 ❌ [Six month reference period despite respondent recall more accurate looking back only three months](https://www.icpsr.umich.edu/web/pages/NACJD/NCVS/index.html#Methodological_Issues)
+
+❌ State-level estimates are not possible to replicate with the publicly available data
 
 <br>
 
@@ -105,7 +107,7 @@ left_join_zero_missings <-
 
 1. Register for the National Archive of Criminal Justice Data at https://www.icpsr.umich.edu/web/NACJD/series/95
 
-2. Choose `National Crime Victimization Survey, Concatenated File, [United States], 1992-2022 (ICPSR 38604)`
+2. Choose `National Crime Victimization Survey, Concatenated File, [United States], 1992-2023 (ICPSR 38963)`
 
 3. Download the `R` version of the September 18, 2023 file.
 
@@ -113,13 +115,13 @@ Import the three main files:
 
 ```{r eval = FALSE , results = "hide" }
 chapter_tag_household_df_name <-
-	load( file.path( path.expand( "~" ) , "ICPSR_38604/DS0001/38604-0001-Data.rda" ) )
+	load( file.path( path.expand( "~" ) , "ICPSR_38963/DS0001/38963-0001-Data.rda" ) )
 	
 chapter_tag_person_df_name <-
-	load( file.path( path.expand( "~" ) , "ICPSR_38604/DS0002/38604-0002-Data.rda" ) )
+	load( file.path( path.expand( "~" ) , "ICPSR_38963/DS0002/38963-0002-Data.rda" ) )
 
 chapter_tag_incident_df_name <-
-	load( file.path( path.expand( "~" ) , "ICPSR_38604/DS0003/38604-0003-Data.rda" ) )
+	load( file.path( path.expand( "~" ) , "ICPSR_38963/DS0003/38963-0003-Data.rda" ) )
 
 chapter_tag_household_df <- get( chapter_tag_household_df_name )
 chapter_tag_person_df <- get( chapter_tag_person_df_name )
